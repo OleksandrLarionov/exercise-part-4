@@ -8,15 +8,15 @@ class CommentArea extends Component {
 	state = {
 		comment: [],
 	};
-	componentDidMount() {
-		this.getComents();
-	}
-
-	// componentDidUpdate(prevProps, prevState) {
-	// 	if (prevState.comment !== this.state.comment) {
-	// 		this.props.setStateOfApp(this.props.asin);
-	// 	}
+	// componentDidMount() {
+	// 	this.getComents();
 	// }
+
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps.bookId !== this.props.bookId) {
+			this.getComents();
+		}
+	}
 
 	getComents = async () => {
 		try {

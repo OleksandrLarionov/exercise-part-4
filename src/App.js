@@ -13,15 +13,8 @@ import romance from '../src/data/romance.json';
 import scifi from '../src/data/scifi.json';
 import { Component } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import CommentArea from './components/CommentArea';
 
 class App extends Component {
-	state = {
-		selectedAsign: '',
-	};
-	setStateOfApp = (newSelected) => {
-		this.setState({ selectedAsign: newSelected });
-	};
 	render() {
 		return (
 			<Container fluid>
@@ -30,16 +23,13 @@ class App extends Component {
 				<Row>
 					{/* <CommentArea /> */}
 
-					<BookList
-						genre={[fantasy, history, horror, romance, scifi]}
-						setStateOfApp={this.setStateOfApp}
-					/>
+					<BookList genre={[fantasy, history, horror, romance, scifi]} />
 					{/* <BookList genre={fantasy} /> */}
 
-					<CommentArea
+					{/* <CommentArea
 						// selected={this.state.selectedId} setStateOfApp={this.setStateOfApp}
 						newIdBook={this.state.selectedAsign}
-					/>
+					/> */}
 				</Row>
 				<MyFooter />
 			</Container>
